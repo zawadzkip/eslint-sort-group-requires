@@ -1,0 +1,31 @@
+{
+  "name": "eslint-sort-group-requires",
+  "version": "1.0.0",
+  "description": "eslint rule to sort require statements alphabetically and group them by type",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://zawadzkip@github.com/zawadzkip/eslint-sort-group-requires.git"
+  },
+  "keywords": [
+    "npm",
+    "eslint",
+    "sort",
+    "group",
+    "requires",
+    "eslint-plugin",
+    "eslint-plugin-sort"
+  ],
+  "author": "Patrick Zawadzki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zawadzkip/eslint-sort-group-requires/issues"
+  },
+  "homepage": "https://github.com/zawadzkip/eslint-sort-group-requires#readme",
+  "dependencies": {
+    "eslint": "^4.17.0"
+  }
+}
