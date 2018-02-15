@@ -8,9 +8,20 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require("../../../lib/rules/sort-group-requires"),
+var rule = require("../../../lib/rules/sort-group-requires");
 
-    RuleTester = require("eslint").RuleTester;
+var code = (lines) => lines.join('\n');
+
+var RuleTester = require("eslint").RuleTester;
+
+RuleTester.setDefaultConfig({
+    parserOptions: {
+        ecmaVersion: 6,
+        ecmaFeatures: {
+            jsx: true,
+        },
+    },
+});
 
 
 //------------------------------------------------------------------------------
@@ -19,18 +30,25 @@ var rule = require("../../../lib/rules/sort-group-requires"),
 
 var ruleTester = new RuleTester();
 ruleTester.run("sort-group-requires", rule, {
-
     valid: [
-
-        // give me some code that won't trigger a warning
+        code([
+            'var item = require("test");',
+            'var mod = require("module");',
+        ]),
+        code([
+            'var item = require("module");',
+            'var localFile = require("./file");',
+            'var Error = require("./error");'
+        ]),
     ],
-
     invalid: [
         {
-            code: "",
+            code: code([
+                'var mod = require("module");',
+                'var item = require("test");',
+            ]),
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
+                message: "Required statement found is out of order, reordering elements",
             }]
         }
     ]

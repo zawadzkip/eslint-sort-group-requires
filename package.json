@@ -4,7 +4,7 @@
   "description": "eslint rule to sort require statements alphabetically and group them by type",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./tests/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/zawadzkip/eslint-sort-group-requires#readme",
   "dependencies": {
-    "eslint": "^4.17.0"
+    "eslint": "^4.17.0",
+    "mocha": "^5.0.1"
   }
 }
